@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+    
+    div{
+        height: 200px;
+        width: 200px;
+        margin: 50px;
+        padding: 50px;
+        border: 10px solid black;
+        background-color:red;
+    }
+
+    </style>
+
+    <script src="jquery-3.3.1.min.js"> 
+    </script>
+    <script>
+
+        $(document).ready(function(){
+            let ancho = $("div").width();
+            let alto = $("div").height();
+
+            $("#dimensiones").append("<h3>width: "+ancho+"</h3>");
+            $("#dimensiones").append("<h3>height: "+alto+"</h3>");
+
+            let anchoInterno = $("div").innerWidth();
+            let altoInerno = $("div").innerHeight();
+
+            $("#dimensiones").append("<h3>innerWidth: "+anchoInterno+"</h3>");
+            $("#dimensiones").append("<h3>innerHeight: "+anchoInterno+"</h3>");
+            
+            let anchoExt = $("div").outerWidth();
+            let altoExt = $("div").outerHeight();
+
+            $("#dimensiones").append("<h3>outerWidth: "+anchoExt+"</h3>");
+            $("#dimensiones").append("<h3>outerHeight: "+altoExt+"</h3>");
+       
+            let anchoExtTrue = $("div").outerWidth(true);
+            let altoExtTrue = $("div").outerHeight(true);
+
+            $("#dimensiones").append("<h3>outerWidth(true): "+anchoExtTrue+"</h3>");
+            $("#dimensiones").append("<h3>outerHeight(true): "+altoExtTrue+"</h3>");
+        });
+
+    </script>   
+
+</head>
+
+<body>
+
+    <div>
+        Mi Caja
+    </div>
+
+    <h2> Dimensiones:</h2>
+
+    <p id="dimensiones">
+
+    </p>
+    
+</body>
+
+</html>
