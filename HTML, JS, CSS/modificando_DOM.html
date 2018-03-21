@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <h1>Alumnos</h1>
+
+    <ul>
+        <li>Juan</li>
+        <li>Pedro</li>
+        <li>Maria</li>
+        <li>Tania</li>
+    </ul>
+
+    <input type="button" onclick="cambiarLista()" value="Cambiar Lista">
+    <input type="button" onclick="cambiarColores()" value="Cambiar Colores">
+    <br><br>
+
+    <div id="lista">
+        Aquí va la nueva lista
+    </div>
+
+    <script>
+        function cambiarLista(){
+            let elements = document.getElementsByTagName("li");
+            console.log(elements);
+        
+            let newList = "<ol>";
+
+            for (let i = 0; i < elements.length; i++) {
+                newList = newList + "<li onmouseover='cambiarFondo(this)'>" + elements[i].innerHTML + "</li>";
+            }
+            newList = newList + "</ol>";
+
+            document.getElementById("lista").innerHTML = newList;
+        }
+
+        function cambiarColores() {
+            let elementos = document.querySelectorAll("div#lista li");
+            if (elementos.length > 0){            console.log("Colores");
+                for (let i = 0; i < elementos.length; i++) {
+                    elementos[i].style.color = ranColor();
+                }
+            }
+            else {
+                console.log("la nueva lista no existe");
+                
+            }
+        }
+
+        function cambiarFondo(objeto){
+            objeto.style.backgroundColor = ranColor();
+        }
+
+        function ranColor(){
+            let r = Math.floor(Math.random()*256);
+            let g = Math.floor(Math.random()*256);
+            let b = Math.floor(Math.random()*256);
+            let color = "rgb(" + r + "," + g + "," + b + ")";
+            console.log(color);
+            return color;
+        }
+    </script>
+
+</body>
+
+</html>

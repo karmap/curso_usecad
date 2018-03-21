@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <script>
+        function validateForm() {
+            let fname = document.forms["formA"]["fname"].value;
+            let fage = document.forms["formA"]["fage"].value;
+    
+            console.log("El nombre es: " + fname);
+            console.log("La edad es: " + fage);
+    
+            if (fname == "") {
+                alert("Tienes que ingresar tu nombre");
+                return false;
+            }
+            else if (fage == "") {
+                alert("Tienes que ingresar tu edad");
+                return false;
+            }
+            else{
+                document.getElementById("labelName").innerHTML = fname;
+                document.getElementById("labelAge").innerHTML = fage;                
+            }
+        } 
+    </script>
+
+</head>
+
+<body>
+
+<form name="formA" action=""
+       onsubmit="" method="post">
+
+    Nombre: <input type="text" name="fname" value="Juan">
+    <br>
+    Edad: <input type="text" name="fage" value="24">
+    <br>
+    <input onclick="validateForm()" type="button" value="Enviar">
+
+</form>
+
+<div>
+    <h2>Nombre:</h2>
+    <strong id="labelName"></strong>
+    <h2>Edad:</h2>
+    <strong id="labelAge"></strong>
+</div>
+
+</body>
+
+</html>

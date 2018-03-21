@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <script src="jquery-3.3.1.min.js"> 
+    </script>
+    <script>
+
+        $(document).ready(function(){
+            $("p").on({
+                
+                mouseenter: function(){
+                    $(this).css('background-color','#8888ff')
+                },
+                mouseleave: function(){
+                    $(this).css('background-color','#ffffff');
+                },
+                click: function(){
+                    console.log("Haz hecho click sobre un párrafo");
+                }
+                
+            });
+        });
+
+    </script>   
+
+</head>
+
+<body>
+
+    <h1>Hola mundo jQuery</h1>
+
+    <p>párrafo 1</p>
+    <p>párrafo 2</p>
+    <p>párrafo 3</p>
+    
+
+</body>
+
+</html>

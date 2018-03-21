@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+    
+    div.floatBox{
+        height: 200px;
+        width: 200px;
+        margin: 20px;
+        float: left;
+        padding: 30px;
+        background-color: red;
+    }
+    #div2{
+        background-color: blue;
+    }
+    #div3{
+        background-color: green;
+    }
+
+    </style>
+
+    <script src="jquery-3.3.1.min.js"> 
+    </script>
+    <script>
+
+        $(document).ready(function(){
+            $("div.floatBox").hide();
+            $("#miBoton").click(function(){
+                $("div.floatBox").fadeToggle(5000,function(){
+                    console.log("Ha terminado tu efecto Fade");
+                });
+                console.log("Ha terminado tu click");
+            });
+        });
+
+    </script>   
+
+</head>
+
+<body>
+
+    <h1>Efectos fade jQuery</h1>
+
+    <div>
+        <input id="miBoton" type="button" value="Aparecer">
+    </div>
+
+    <div>
+        <div class="floatBox" id="div2">Caja 2</div>
+        <div class="floatBox" id="div3">Caja 3</div>
+        <div class="floatBox" id="div1">Caja 1</div>
+    </div>
+
+</body>
+
+</html>

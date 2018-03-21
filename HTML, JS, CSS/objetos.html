@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+    
+    let alumno1 = {};
+    let alumno2 = {nombre:"Juan", edad:21};
+    let alumno3 = new Object();
+
+    alumno3.nombre = "Pedro";
+    alumno3.edad = 19;
+
+    console.log(alumno1);
+    console.log(alumno2);
+    console.log(alumno3);
+
+    for (const propiedad in alumno3) {
+        console.log(propiedad);
+    }
+
+    function Alumno(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    let alumno4 = new Alumno("Maria",20);
+
+    console.log(alumno4);
+    
+
+    </script>
+
+</body>
+
+</html>
