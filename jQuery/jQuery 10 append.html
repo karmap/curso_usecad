@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+    
+    div.floatBox{
+        height: 200px;
+        width: 200px;
+        margin: 20px;
+        float: left;
+        padding: 30px;
+        background-color: red;
+    }
+    #div2{
+        background-color: blue;
+    }
+    #div3{
+        background-color: green;
+    }
+
+    </style>
+
+    <script src="jquery-3.3.1.min.js"> 
+    </script>
+    <script>
+
+        $(document).ready(function(){
+            $("#btAppend").click(function(){
+                if ($("#listElement").val() != "")
+                    $("ol").append("<li>"+ $("#listElement").val() +"</li>");
+                else
+                    console.log("el campo esta vacío");     
+            });
+            $("#btClean").click(function(){
+                $("ol").empty();
+            });
+        });
+
+    </script>   
+
+</head>
+
+<body>
+
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ol>
+
+    <input type="text" id="listElement">
+    <input type="button" id="btAppend" value="Agregar">
+    <input type="button" id="btClean" value="Limpiar" 
+</body>
+
+</html>

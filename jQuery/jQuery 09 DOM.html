@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+    
+    div.floatBox{
+        height: 200px;
+        width: 200px;
+        margin: 20px;
+        float: left;
+        padding: 30px;
+        background-color: red;
+    }
+    #div2{
+        background-color: blue;
+    }
+    #div3{
+        background-color: green;
+    }
+
+    </style>
+
+    <script src="jquery-3.3.1.min.js"> 
+    </script>
+    <script>
+
+        $(document).ready(function(){
+            $("#name").change(function(){
+                console.log("el nombre es: " + $("#name").val() );
+            });
+            $("#age").change(function(){
+                console.log("el nombre es: " + $("#age").val() );
+            });
+
+
+            $("#button1").click(function(){
+                $("#parrafo1").html("<ul><li>parrafo 1</li><li>parrafo 2</li><li>parrafo 3</li></ul>");
+            });
+
+        });
+
+    </script>   
+
+</head>
+
+<body>
+
+    <div>nombre</div>
+    <input type="text" name="name" id="name">
+    <div>edad</div>
+    <input type="text" name="age" id="age">
+
+    <h1>Aquí va un párrafo</h1>
+
+    <input type="button" id="button1" value="Llenar párrafo">
+
+    <p id="parrafo1">
+
+    </p>
+</body>
+
+</html>

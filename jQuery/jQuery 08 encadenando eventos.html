@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+    
+    div.floatBox{
+        height: 200px;
+        width: 200px;
+        margin: 20px;
+        float: left;
+        padding: 30px;
+        background-color: red;
+    }
+    #div2{
+        background-color: blue;
+    }
+    #div3{
+        background-color: green;
+    }
+
+    </style>
+
+    <script src="jquery-3.3.1.min.js"> 
+    </script>
+    <script>
+
+        $(document).ready(function(){
+            
+            $("#miBoton").click(function(){
+                $("div.floatBox").slideUp(2000).slideDown(2000);
+            });
+            $("#miStop").click(function(){
+                $("div.floatBox").stop();
+            });
+        });
+
+    </script>   
+
+</head>
+
+<body>
+
+    <h1>Efectos Animate jQuery</h1>
+
+    <span>
+        <input id="miBoton" type="button" value="Animar">
+    </span>
+
+    <span>
+        <input id="miStop" type="button" value="Parar">
+    </span>
+
+    <div>
+        <div class="floatBox" id="div2">Caja 2</div>
+        <div class="floatBox" id="div3">Caja 3</div>
+        <div class="floatBox" id="div1">Caja 1</div>
+    </div>
+
+</body>
+
+</html>
