@@ -49,34 +49,13 @@ if ( $conn -> connect_error ){
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, name, number, email FROM alumno";
-$result = $conn->query($sql);
+$sql = "DELETE FROM alumno WHERE id=" . $_GET["id"];
 
-echo "
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Numero de cuenta</th> 
-    <th>Correo</th>
-    <th>Eliminar</th>
-  </tr>";
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row["name"] . "</td>";
-        echo "<td>" . $row["number"] . "</td>";
-        echo "<td>" . $row["email"] . "</td>";
-        echo "<td>" . "<a href='eliminar.php?id=". $row["id"] ."'> X </a>" . "</td>";
-        echo "</tr>";
-    }
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
 } else {
-    echo "0 results";
+    echo "Error deleting record: " . $conn->error;
 }
-
-echo "
-</table>";
 
 $conn->close();
 ?> 
